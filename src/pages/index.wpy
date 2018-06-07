@@ -1,0 +1,43 @@
+<style lang="less">
+</style>
+<template>
+  <view class="container">
+    Hello world asdfsd
+    <button @tap="handleClick">try</button>
+    <buttonDefault>nihao</buttonDefault>
+    <!-- <toast id="toast"></toast> -->
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import Button from 'wepy-ui-ydj/src/components/Button.wpy'
+// import Toast from 'wepy-com-toast'
+
+// console.log(Toast)
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: 'test'
+  }
+  components = {
+    buttonDefault: Button
+    // toast: Toast,
+  }
+  onLoad() {
+    console.log('onLoad')
+  }
+  methods = {
+    handleClick() {
+      let promise = this.$invoke('toast', 'show', {
+        title: '自定义标题',
+        img:
+          'https://raw.githubusercontent.com/kiinlam/wetoast/master/images/star.png'
+      })
+
+      promise.then(d => {
+        console.log('toast done')
+      })
+    }
+  }
+}
+</script>
