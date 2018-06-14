@@ -4,39 +4,37 @@
   <view class="container">
     Hello world asdfsd
     <button @tap="handleClick">try</button>
-    <buttonDefault>nihao</buttonDefault>
-    <!-- <toast id="toast"></toast> -->
+    <ButtonDefault>nihao</ButtonDefault>
+    <Toast :show.sync="showToast"></Toast>
   </view>
 </template>
 
 <script>
 import wepy from 'wepy'
-import Button from 'wepy-ui-ydj/src/components/Button.wpy'
-// import Toast from 'wepy-com-toast'
+import Button from 'wepy-ui-ydj/src/components/Button'
+import Toast from 'wepy-ui-ydj/src/components/Toast'
+import Message from 'wepy-ui-ydj/src/components/Message'
 
-// console.log(Toast)
 export default class Index extends wepy.page {
   config = {
     navigationBarTitleText: 'test'
   }
+
+  data = {
+    showToast: false
+  }
+
   components = {
-    buttonDefault: Button
-    // toast: Toast,
+    ButtonDefault: Button,
+    Toast,
+    Message
   }
   onLoad() {
     console.log('onLoad')
   }
   methods = {
     handleClick() {
-      let promise = this.$invoke('toast', 'show', {
-        title: '自定义标题',
-        img:
-          'https://raw.githubusercontent.com/kiinlam/wetoast/master/images/star.png'
-      })
-
-      promise.then(d => {
-        console.log('toast done')
-      })
+      this.showToast = true
     }
   }
 }

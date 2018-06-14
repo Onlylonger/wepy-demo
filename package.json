@@ -4,16 +4,16 @@
   "description": "A WePY project",
   "main": "dist/app.js",
   "scripts": {
-    "dev": "wepy build --watch",
+    "dev": "wepy -v && wepy build --watch",
     "build": "cross-env NODE_ENV=production wepy build --no-cache",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "王世隆 <547463736@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "wepy": "^1.6.0",
+    "wepy": "^1.7.1",
     "wepy-com-toast": "^1.0.2",
-    "wepy-ui-ydj": "^0.0.8"
+    "wepy-ui-ydj": "@0.1.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.1",
