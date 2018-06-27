@@ -6,6 +6,7 @@
     <button @tap="handleClick">try</button>
     <ButtonDefault>nihao</ButtonDefault>
     <Toast :show.sync="showToast"></Toast>
+    <Input title="姓名" placeholder="请输入姓名" focus="{{true}}" />
   </view>
 </template>
 
@@ -14,6 +15,7 @@ import wepy from 'wepy'
 import Button from 'wepy-ui-ydj/src/components/Button'
 import Toast from 'wepy-ui-ydj/src/components/Toast'
 import Message from 'wepy-ui-ydj/src/components/Message'
+import Input from 'wepy-ui-ydj/Input'
 
 export default class Index extends wepy.page {
   config = {
@@ -27,7 +29,8 @@ export default class Index extends wepy.page {
   components = {
     ButtonDefault: Button,
     Toast,
-    Message
+    Message,
+    Input
   }
   onLoad() {
     console.log('onLoad')
